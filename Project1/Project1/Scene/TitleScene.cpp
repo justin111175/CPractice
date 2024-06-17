@@ -1,6 +1,7 @@
 #include "TitleScene.h"
 #include "../Common/Debug/_DebugDispOut.h"
 #include "../Common/Debug/_DebugConOut.h"
+#include"../Common/Function.h"
 TitleScene::TitleScene()
 {
 	TRACE("%s", "初始化登入頁面");
@@ -12,8 +13,8 @@ TitleScene::~TitleScene()
 
 unique_Base TitleScene::Update(unique_Base own)
 {
-	Draw();
 
+	DrawOwn();
 	//if (!FadeUpdate())
 	//{
 
@@ -28,19 +29,22 @@ unique_Base TitleScene::Update(unique_Base own)
 	return std::move(own);
 }
 
-void TitleScene::BaseDraw()
+void TitleScene::Init(void)
 {
+	GetDrawScreenSize(&screen_size_.x, &screen_size_.y);
+}
 
-	SetDrawScreen(DX_SCREEN_BACK);
-
+void TitleScene::DrawOwn()
+{
+	//DrawGraph(0,0, IpImageMng.GetID("0")[0], true);
+	SetDrawScreen(screenID_);
+	SetFontSize(50);
+	DrawString(0, 0, ConvertToTCHAR("TTT"), 0xf0f8ff, 0xFFFFFF);
 
 }
 
-void TitleScene::Draw()
+void TitleScene::Ctl(conType input)
 {
-	ClsDrawScreen();
-	BaseDraw();
-
-	ScreenFlip();
-
 }
+
+

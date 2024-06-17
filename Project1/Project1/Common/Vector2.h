@@ -1,5 +1,8 @@
 #pragma once
 #include <math.h>
+#include <tchar.h>
+#include <string>
+#include <vector>
 
 template<class T>class Vector2Template
 {
@@ -55,7 +58,6 @@ template<class T>
 Vector2Template<T> operator%(const Vector2Template<T>&u, const Vector2Template<T> v);
 
 
-//��ς�Ԃ�
 template<class T>
 Vector2Template<T> Dot(const Vector2Template<T>& va, const Vector2Template<T>& vb);
 

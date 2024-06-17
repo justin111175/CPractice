@@ -1,7 +1,9 @@
 //#include "stdafx.h"
-#include "../common/Vector2.h"
 #include <cmath>
 #include "..\Vector2.h"
+
+
+
 
 template<class T>
 Vector2Template<T>::Vector2Template()

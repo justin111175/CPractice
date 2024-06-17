@@ -21,6 +21,11 @@
   <ItemGroup>
     <ClCompile Include="Common\Debug\_DebugConOut.cpp" />
     <ClCompile Include="Common\Debug\_DebugDispOut.cpp" />
+    <ClCompile Include="Common\ImageMng.cpp" />
+    <ClCompile Include="Common\Input\KeyInput.cpp" />
+    <ClCompile Include="Common\Input\PadInput.cpp" />
+    <ClCompile Include="Common\TimeCount.cpp" />
+    <ClCompile Include="Common\Function.cpp" />
     <ClCompile Include="Scene\BaseScene.cpp" />
     <ClCompile Include="MainInit.cpp" />
     <ClCompile Include="Scene\SceneManager.cpp" />
@@ -30,7 +35,15 @@
     <ClInclude Include="Common\Debug\_DebugConOut.h" />
     <ClInclude Include="Common\Debug\_DebugDispOut.h" />
     <ClInclude Include="Common\detail\Vector2.h" />
+    <ClInclude Include="Common\ImageMng.h" />
+    <ClInclude Include="Common\Input\Controller.h" />
+    <ClInclude Include="Common\Input\conTypeID.h" />
+    <ClInclude Include="Common\Input\InputID.h" />
+    <ClInclude Include="Common\Input\KeyInput.h" />
+    <ClInclude Include="Common\Input\PadInput.h" />
+    <ClInclude Include="Common\TimeCount.h" />
     <ClInclude Include="Common\Vector2.h" />
+    <ClInclude Include="Common\Function.h" />
     <ClInclude Include="Scene\BaseScene.h" />
     <ClInclude Include="Common\Singleton.h" />
     <ClInclude Include="Scene\SceneManager.h" />

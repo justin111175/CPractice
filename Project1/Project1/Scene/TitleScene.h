@@ -6,9 +6,12 @@ public:
 	TitleScene();
 	~TitleScene();
 	unique_Base Update(unique_Base own) override;					
-	void BaseDraw(void) override;									
-
+	
+	void Init(void);
+	Vector2 screen_size_;
 private:
-	void Draw(void);
+	void DrawOwn() override;
+	void Ctl(conType input);
+
 };
 

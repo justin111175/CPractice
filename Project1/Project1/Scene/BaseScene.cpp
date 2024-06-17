@@ -9,11 +9,11 @@ BaseScene::~BaseScene()
 {
 }
 
-void BaseScene::FadeInit(std::string fadeType)
+void BaseScene::Draw()
 {
+
+    DrawGraph(0, 0, screenID_, true);
+
 }
 
-bool BaseScene::FadeUpdate(void)
-{
-    return false;
-}
+

@@ -10,6 +10,10 @@ void SceneManager::Run()
 		//AST();
 	}
 
+	SetUseZBufferFlag(TRUE);
+	SetWriteZBufferFlag(TRUE);
+	SetMouseDispFlag(TRUE);
+
 	activeScene = std::make_unique<TitleScene>();
 
 	while (ProcessMessage() == 0 && CheckHitKey(KEY_INPUT_ESCAPE) == 0)
@@ -17,6 +21,12 @@ void SceneManager::Run()
 		_dbgStartDraw();
 
 		activeScene = (*activeScene).Update(std::move(activeScene));
+		
+		SetDrawScreen(DX_SCREEN_BACK);
+		activeScene->Draw();
+		_dbgAddDraw();
+		ScreenFlip();
+
 
 		frames++;
 	}
@@ -26,7 +36,7 @@ SceneManager::SceneManager():
 	screenSize{1280,720}
 {
 
-
+	frames = 0;
 }
 
 SceneManager::~SceneManager()
