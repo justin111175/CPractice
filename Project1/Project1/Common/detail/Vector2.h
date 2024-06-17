@@ -23,7 +23,6 @@ Vector2Template<T>::~Vector2Template()
 }
 
 
-// 代入演算子
 template<class T>
 Vector2Template<T> & Vector2Template<T>::operator =(const Vector2Template<T> & vec)
 {
@@ -34,7 +33,6 @@ Vector2Template<T> & Vector2Template<T>::operator =(const Vector2Template<T> & v
 
 }
 
-// 添え字演算子
 template<class T>
 T & Vector2Template<T>::operator[](int i)
 {
@@ -52,7 +50,6 @@ T & Vector2Template<T>::operator[](int i)
 	}
 }
 
-// 比較演算子
 template<class T>
 bool Vector2Template<T>::operator==(const Vector2Template<T> & vec) const
 {
@@ -81,7 +78,6 @@ bool Vector2Template<T>::operator<=(const Vector2Template<T> & vec) const
 
 
 
-//単項演算子
 template<class T>
 Vector2Template<T> & Vector2Template<T>::operator+=(const Vector2Template<T> & vec)
 {
@@ -122,10 +118,10 @@ Vector2Template<T> & Vector2Template<T>::operator/=(T k)
 }
 
 template<class T>
-Vector2Template<T> Vector2Template<T>::operator+() const		//()const   この関数の中で全ての数字const
+Vector2Template<T> Vector2Template<T>::operator+() const		
 {
 
-	return *this;						// *this この自身のままで（数字変わらない）
+	return *this;						
 }
 
 template<class T>
@@ -134,8 +130,6 @@ Vector2Template<T> Vector2Template<T>::operator-() const
 	return Vector2Template<T>(-this->x,-this->y);
 }
 
-// ベクトルの演算
-// Vector2<T>　+　T 
 template<class T>
 Vector2Template<T> operator+(const Vector2Template<T> & u, T v)
 {
@@ -143,7 +137,6 @@ Vector2Template<T> operator+(const Vector2Template<T> & u, T v)
 	return Vector2Template<T>(u.x + v, u.y + v);
 }
 
-// Vector2<T>　-　T 
 template<class T>
 Vector2Template<T> operator-(const Vector2Template<T> & u, T v)
 {
@@ -151,7 +144,6 @@ Vector2Template<T> operator-(const Vector2Template<T> & u, T v)
 	return Vector2Template<T>(u.x - v, u.y - v);
 
 }
-// Vector2<T>　*　T
 template<class T>
 Vector2Template<T> operator*(const Vector2Template<T> & u, T v)
 {
@@ -160,8 +152,6 @@ Vector2Template<T> operator*(const Vector2Template<T> & u, T v)
 
 }
 
-
-// Vector2<T>　/　T
 template<class T>
 Vector2Template<T> operator/(const Vector2Template<T> & u, T v)
 {
@@ -169,7 +159,6 @@ Vector2Template<T> operator/(const Vector2Template<T> & u, T v)
 	return Vector2Template<T>(u.x / v, u.y / v);
 
 }
-// Vector2<T>　%　T
 template<class T>
 Vector2Template<T> operator%(const Vector2Template<T> & u, T v)
 {
@@ -178,7 +167,6 @@ Vector2Template<T> operator%(const Vector2Template<T> & u, T v)
 
 }
 
-// T * Vector2<T>　
 template<class T>
 Vector2Template<T> operator*(T v, const Vector2Template<T> & u)
 {
@@ -187,7 +175,6 @@ Vector2Template<T> operator*(T v, const Vector2Template<T> & u)
 
 }
 
-// Vector2<T>　+　Vector2<T>
 template<class T>
 Vector2Template<T> operator+(const Vector2Template<T> & u, const Vector2Template<T> v)
 {
@@ -197,7 +184,6 @@ Vector2Template<T> operator+(const Vector2Template<T> & u, const Vector2Template
 
 	return vec;
 }
-// Vector2<T>　-　Vector2<T>
 template<class T>
 Vector2Template<T> operator-(const Vector2Template<T> & u, const Vector2Template<T> v)
 {
@@ -207,7 +193,6 @@ Vector2Template<T> operator-(const Vector2Template<T> & u, const Vector2Template
 
 	return vec;
 }
-// Vector2<T>　*　Vector2<T>
 template<class T>
 Vector2Template<T> operator*(const Vector2Template<T> & u, const Vector2Template<T> v)
 {
@@ -217,7 +202,6 @@ Vector2Template<T> operator*(const Vector2Template<T> & u, const Vector2Template
 
 	return vec;
 }
-// Vector2<T>　/　Vector2<T>
 template<class T>
 Vector2Template<T> operator/(const Vector2Template<T> & u, const Vector2Template<T> v)
 {
@@ -227,7 +211,6 @@ Vector2Template<T> operator/(const Vector2Template<T> & u, const Vector2Template
 
 	return vec;
 }
-// Vector2<T>　%　Vector2<T>
 template<class T>
 Vector2Template<T> operator%(const Vector2Template<T> & u, const Vector2Template<T> v)
 {
@@ -238,14 +221,12 @@ Vector2Template<T> operator%(const Vector2Template<T> & u, const Vector2Template
 	return vec;
 }
 
-//内積を返す
 template<class T>
 Vector2Template<T> Dot(const Vector2Template<T>& va, const Vector2Template<T>& vb)
 {
 	return va.x * vb.x + va.y * vb.y;
 }
 
-//外積を返す
 template<class T>
 Vector2Template<T> Cross(const Vector2Template<T>& va, const Vector2Template<T>& vb)
 {
@@ -253,7 +234,6 @@ Vector2Template<T> Cross(const Vector2Template<T>& va, const Vector2Template<T>&
 }
 
 
-//1点のベクトルの大きさを返します
 template<class T>
 T Magnitude(Vector2Template<T>& vec)
 {
@@ -262,7 +242,6 @@ T Magnitude(Vector2Template<T>& vec)
 	return hypot(vec.x,vec.y);
 }
 
-//2点のベクトルの大きさを返します
 template<class T>
 Vector2Template<T> Magnitude(Vector2Template<T>& vec1, Vector2Template<T>& vec2)
 {
@@ -270,7 +249,6 @@ Vector2Template<T> Magnitude(Vector2Template<T>& vec1, Vector2Template<T>& vec2)
 }
 
 
-//1点の正規化(大きさを１に)ベクトルを返します
 template<class T>
 Vector2Template<T> Normalize(Vector2Template<T>&vec)
 {

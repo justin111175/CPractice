@@ -3,7 +3,6 @@
 #include <windows.h>
 #include <memory>
 #include <assert.h>
-// ÃÞÊÞ¯¸ÞÒ¯¾°¼Þ—p’è‹`
 
 #define TRACE(fmt, ...) printf(fmt, __VA_ARGS__);
 

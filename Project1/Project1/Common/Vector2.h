@@ -1,7 +1,6 @@
 #pragma once
 #include <math.h>
 
-// ƒeƒ“ƒvƒŒ[ƒg
 template<class T>class Vector2Template
 {
 public:
@@ -11,20 +10,16 @@ public:
 	T x;
 	T y;
 
-	// ‘ã“ü‰‰Zq@
 	Vector2Template<T>& operator = (const Vector2Template&vec);
 
-	// “Y‚¦š‰‰Zq
 	T& operator [] (int i);
 
-	// ”äŠr‰‰Zq
 	bool operator == (const Vector2Template&vec)const;
 	bool operator != (const Vector2Template&vec)const;
 	bool operator > (const Vector2Template&vec)const;
 	bool operator >= (const Vector2Template&vec)const;
 	bool operator <= (const Vector2Template&vec)const;
 
-	// ’P€‰‰Zq
 	Vector2Template& operator +=(const Vector2Template<T>&vec);
 	Vector2Template& operator -=(const Vector2Template<T>&vec);
 	Vector2Template& operator *=(T k);
@@ -34,63 +29,47 @@ public:
 	Vector2Template operator-()const;
 };
 
-// ƒxƒNƒgƒ‹‚Ì‰‰Z
-// Vector2<T>@+@T 
 template<class T>
 Vector2Template<T> operator+(const Vector2Template<T>&u, T v);
-// Vector2<T>@-@T 
 template<class T>
 Vector2Template<T> operator-(const Vector2Template<T>&u, T v);
-// Vector2<T>@*@T 
 template<class T>
 Vector2Template<T> operator*(const Vector2Template<T>&u, T v);
-// Vector2<T>@/@T 
 template<class T>
 Vector2Template<T> operator/(const Vector2Template<T>&u, T v);
-// Vector2<T>@%@T 
 template<class T>
 Vector2Template<T> operator%(const Vector2Template<T>&u, T v);
 
-// T  * Vector2<T>@
 template<class T>
 Vector2Template<T> operator*(T v, const Vector2Template<T>&u);
 
-// Vector2<T>@+@Vector2<T>
 template<class T>
 Vector2Template<T> operator+(const Vector2Template<T>&u, const Vector2Template<T> v);
-// Vector2<T>@-@Vector2<T>
 template<class T>
 Vector2Template<T> operator-(const Vector2Template<T>&u, const Vector2Template<T> v);
-// Vector2<T>@*@Vector2<T>
 template<class T>
 Vector2Template<T> operator*(const Vector2Template<T>&u, const Vector2Template<T> v);
-// Vector2<T>@/@Vector2<T>
 template<class T>
 Vector2Template<T> operator/(const Vector2Template<T>&u, const Vector2Template<T> v);
-// Vector2<T>@%@Vector2<T>
 template<class T>
 Vector2Template<T> operator%(const Vector2Template<T>&u, const Vector2Template<T> v);
 
 
-//“àÏ‚ğ•Ô‚·
+//ï¿½ï¿½Ï‚ï¿½Ô‚ï¿½
 template<class T>
 Vector2Template<T> Dot(const Vector2Template<T>& va, const Vector2Template<T>& vb);
 
-//ŠOÏ‚ğ•Ô‚·
 template<class T>
 Vector2Template<T> Cross(const Vector2Template<T>& va, const Vector2Template<T>& vb);
 
 
 
-//1“_‚ÌƒxƒNƒgƒ‹‚Ì‘å‚«‚³‚ğ•Ô‚µ‚Ü‚·
 template<class T>
 T Magnitude(Vector2Template<T>& vec);
 
-//2“_‚ÌƒxƒNƒgƒ‹‚Ì‘å‚«‚³‚ğ•Ô‚µ‚Ü‚·
 template<class T>
 Vector2Template<T> Magnitude(Vector2Template<T>& vec1, Vector2Template<T>& vec2);
 
-//1“_‚Ì³‹K‰»(‘å‚«‚³‚ğ‚P‚É)ƒxƒNƒgƒ‹‚ğ•Ô‚µ‚Ü‚·
 template<class T>
 Vector2Template<T> Normalize(Vector2Template<T>& vec);
 

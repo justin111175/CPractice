@@ -39,7 +39,7 @@ void _DebugDispOut::WaitMode(void)
 	if (CheckHitKey(KEY_INPUT_PGDN))
 	{
 		_waitTime+=10.0;
-		TRACE("ƒXƒ[F%f\n", _waitTime);
+		TRACE("ï¿½Xï¿½ï¿½ï¿½[ï¿½F%f\n", _waitTime);
 	}
 	if (CheckHitKey(KEY_INPUT_PGUP))
 	{
@@ -48,11 +48,9 @@ void _DebugDispOut::WaitMode(void)
 		{
 			_waitTime = 0.0;
 		}
-		TRACE("ƒXƒ[F%f\n", _waitTime);
 	}
 	if (CheckHitKey(KEY_INPUT_PAUSE))
 	{
-		TRACE("ˆê’â~\n");
 		_waitTime = -1.0;
 	}
 	if (_waitTime)
@@ -66,7 +64,6 @@ void _DebugDispOut::WaitMode(void)
 			if (CheckHitKey(KEY_INPUT_END))
 			{
 				_waitTime = 0.0;
-				TRACE("ƒXƒ[/ˆê’â~@‰ğœ\n");
 			}
 			_endTime = std::chrono::system_clock::now();
 		} while (std::chrono::duration_cast<std::chrono::milliseconds>(_endTime - _startTime).count() < _waitTime || _waitTime < 0.0);
@@ -76,7 +73,6 @@ void _DebugDispOut::WaitMode(void)
 	if (_endKey[0] && !_endKey[1])
 	{
 		_clsFlag ^= 1;
-		TRACE("ƒfƒoƒbƒO•\¦ƒNƒŠƒA[‹@”\F%d\n",_clsFlag);
 	}
 }
 
@@ -96,10 +92,10 @@ int _DebugDispOut::DrawBox(int x1, int y1, int x2, int y2, unsigned int Color, i
 	return rtnFlag;
 }
 
-int _DebugDispOut::DrawString(int x, int y, char* String, unsigned int Color)
+int _DebugDispOut::DrawString(int x, int y, wchar_t* String, unsigned int Color)
 {
 	SetScreen();
-	int rtnFlag = DxLib::DrawString(x, y, String, Color);
+	int rtnFlag = DxLib::DrawString(x, y,String, Color);
 	RevScreen();
 	return rtnFlag;
 }
@@ -156,12 +152,10 @@ bool _DebugDispOut::AddDrawDebug(void)
 {
 	if (CheckHitKey(KEY_INPUT_INSERT))
 	{
-		TRACE("ƒfƒoƒbƒO•\¦ON\n");
 		_dispFlag = true;
 	}
 	if (CheckHitKey(KEY_INPUT_DELETE))
 	{
-		TRACE("ƒfƒoƒbƒO•\¦OFF\n");
 		_dispFlag = false;
 	}
 	if (_dispFlag)

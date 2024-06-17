@@ -5,8 +5,8 @@ class TitleScene:public BaseScene
 public:
 	TitleScene();
 	~TitleScene();
-	unique_Base Update(unique_Base own) override;					// çXêV
-	void BaseDraw(void) override;									// ï`âÊ
+	unique_Base Update(unique_Base own) override;					
+	void BaseDraw(void) override;									
 
 private:
 	void Draw(void);

@@ -3,7 +3,7 @@
 #include <windows.h>
 #include <memory>
 #include <tuple>
-#include <chrono>		// ê∏ìxÇÕ1msecíˆìx
+#include <chrono>
 
 #define _dbgSetup(A,B,C)	_DebugDispOut::GetInstance().Setup(A,B,C)
 #define _dbgSetAlpha(A)	_DebugDispOut::GetInstance().SetAlpha(A)
@@ -32,7 +32,7 @@ public:
 	}
 	int DrawGraph(int x, int y, int GrHandle, int TransFlag);
 	int DrawBox(int x1, int y1, int x2, int y2, unsigned int Color, int FillFlag);
-	int DrawString(int x, int y, char* String, unsigned int Color);
+	int DrawString(int x, int y, wchar_t* String, unsigned int Color);
 //	int DrawFormatString(int x, int y, unsigned int Color, std::string FormatString, ...);
 	int DrawLine(int x1, int y1, int x2, int y2, unsigned int Color);
 	int DrawCircle(int x, int y, int r, unsigned int Color, int FillFlag);

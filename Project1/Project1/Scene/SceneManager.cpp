@@ -6,6 +6,7 @@ void SceneManager::Run()
 {
 	if (!SysInit())
 	{
+		TRACE("系統初始化失敗");
 		//AST();
 	}
 
@@ -34,7 +35,8 @@ SceneManager::~SceneManager()
 
 bool SceneManager::SysInit()
 {
-	SetWindowText("�n��C++");							
+
+	SetWindowText(_T("測試C++"));
 	SetGraphMode(screenSize.x, screenSize.y, 16);
 	
 	_dbgSetup(screenSize.x, screenSize.y, 16);

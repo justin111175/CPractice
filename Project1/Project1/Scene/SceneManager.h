@@ -13,15 +13,14 @@ public:
     const Vector2 screenSize;
 
 private:
-    // Allow Singleton to access the private constructor and destructor
     friend class Singleton<SceneManager>;
 
     SceneManager();
     ~SceneManager();
 
     bool SysInit();
-    unique_Base activeScene;   // Assuming unique_Base is previously defined
-    int frames;                // Frame count
+    unique_Base activeScene;  
+    int frames;                
 
 
 };

@@ -3,7 +3,7 @@
 #include "../Common/Debug/_DebugConOut.h"
 TitleScene::TitleScene()
 {
-	TRACE("%s", "Title‘ªlog");
+	TRACE("%s", "åˆå§‹åŒ–ç™»å…¥é é¢");
 }
 
 TitleScene::~TitleScene()
