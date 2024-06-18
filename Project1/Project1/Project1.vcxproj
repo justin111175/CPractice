@@ -19,35 +19,41 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Common\Debug\_DebugConOut.cpp" />
-    <ClCompile Include="Common\Debug\_DebugDispOut.cpp" />
-    <ClCompile Include="Common\ImageMng.cpp" />
-    <ClCompile Include="Common\Input\KeyInput.cpp" />
-    <ClCompile Include="Common\Input\PadInput.cpp" />
-    <ClCompile Include="Common\TimeCount.cpp" />
-    <ClCompile Include="Common\Function.cpp" />
-    <ClCompile Include="Scene\BaseScene.cpp" />
+    <ClCompile Include="Source\Common\Input\MouseCtl.cpp" />
+    <ClCompile Include="Source\Scene\Base\BasePanel.cpp" />
+    <ClCompile Include="Source\Common\Debug\_DebugConOut.cpp" />
+    <ClCompile Include="Source\Common\Debug\_DebugDispOut.cpp" />
+    <ClCompile Include="Source\Common\LoadManager.cpp" />
+    <ClCompile Include="Source\Common\TimeCount.cpp" />
+    <ClCompile Include="Source\Common\Function.cpp" />
+    <ClCompile Include="Source\Scene\Base\BaseScene.cpp" />
     <ClCompile Include="MainInit.cpp" />
-    <ClCompile Include="Scene\SceneManager.cpp" />
-    <ClCompile Include="Scene\TitleScene.cpp" />
+    <ClCompile Include="Source\Scene\Base\Slot.cpp" />
+    <ClCompile Include="Source\Scene\SceneManager.cpp" />
+    <ClCompile Include="Source\Scene\Title\TitleScene.cpp" />
+    <ClCompile Include="Source\Scene\Base\MenuPanel.cpp" />
+    <ClCompile Include="Source\Scene\Title\TitleMenu.cpp" />
+    <ClCompile Include="Source\Scene\Title\TitleMenuSlot.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Common\Debug\_DebugConOut.h" />
-    <ClInclude Include="Common\Debug\_DebugDispOut.h" />
-    <ClInclude Include="Common\detail\Vector2.h" />
-    <ClInclude Include="Common\ImageMng.h" />
-    <ClInclude Include="Common\Input\Controller.h" />
-    <ClInclude Include="Common\Input\conTypeID.h" />
-    <ClInclude Include="Common\Input\InputID.h" />
-    <ClInclude Include="Common\Input\KeyInput.h" />
-    <ClInclude Include="Common\Input\PadInput.h" />
-    <ClInclude Include="Common\TimeCount.h" />
-    <ClInclude Include="Common\Vector2.h" />
-    <ClInclude Include="Common\Function.h" />
-    <ClInclude Include="Scene\BaseScene.h" />
-    <ClInclude Include="Common\Singleton.h" />
-    <ClInclude Include="Scene\SceneManager.h" />
-    <ClInclude Include="Scene\TitleScene.h" />
+    <ClInclude Include="Source\Common\Input\MouseCtl.h" />
+    <ClInclude Include="Source\Scene\Base\BasePanel.h" />
+    <ClInclude Include="Source\Common\Debug\_DebugConOut.h" />
+    <ClInclude Include="Source\Common\Debug\_DebugDispOut.h" />
+    <ClInclude Include="Source\Common\detail\Vector2.h" />
+    <ClInclude Include="Source\Common\LoadManager.h" />
+    <ClInclude Include="Source\Common\TimeCount.h" />
+    <ClInclude Include="Source\Common\Vector2.h" />
+    <ClInclude Include="Source\Common\Function.h" />
+    <ClInclude Include="Source\Scene\Base\BaseScene.h" />
+    <ClInclude Include="Source\Common\Singleton.h" />
+    <ClInclude Include="Source\Scene\Base\CollisionBox.h" />
+    <ClInclude Include="Source\Scene\Base\Slot.h" />
+    <ClInclude Include="Source\Scene\SceneManager.h" />
+    <ClInclude Include="Source\Scene\Title\TitleScene.h" />
+    <ClInclude Include="Source\Scene\Base\MenuPanel.h" />
+    <ClInclude Include="Source\Scene\Title\TitleMenu.h" />
+    <ClInclude Include="Source\Scene\Title\TitleMenuSlot.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

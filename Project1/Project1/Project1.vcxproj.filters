@@ -18,84 +18,102 @@
     <ClCompile Include="MainInit.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="Scene\SceneManager.cpp">
+    <ClCompile Include="Source\Scene\SceneManager.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="Scene\BaseScene.cpp">
+    <ClCompile Include="Source\Scene\Base\BaseScene.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="Scene\TitleScene.cpp">
+    <ClCompile Include="Source\Scene\Title\TitleScene.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="Common\Debug\_DebugConOut.cpp">
+    <ClCompile Include="Source\Common\Debug\_DebugConOut.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="Common\Debug\_DebugDispOut.cpp">
+    <ClCompile Include="Source\Common\Debug\_DebugDispOut.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="Common\ImageMng.cpp">
+    <ClCompile Include="Source\Common\LoadManager.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="Common\TimeCount.cpp">
+    <ClCompile Include="Source\Common\TimeCount.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="Common\Input\KeyInput.cpp">
+    <ClCompile Include="Source\Common\Function.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="Common\Input\PadInput.cpp">
+    <ClCompile Include="Source\Scene\Base\BasePanel.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="Common\Function.cpp">
+    <ClCompile Include="Source\Scene\Base\MenuPanel.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\Title\TitleMenu.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\Base\Slot.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\Title\TitleMenuSlot.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Input\MouseCtl.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Scene\SceneManager.h">
+    <ClInclude Include="Source\Scene\SceneManager.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="Common\Singleton.h">
+    <ClInclude Include="Source\Common\Singleton.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="Scene\BaseScene.h">
+    <ClInclude Include="Source\Scene\Base\BaseScene.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="Scene\TitleScene.h">
+    <ClInclude Include="Source\Scene\Title\TitleScene.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="Common\Debug\_DebugDispOut.h">
+    <ClInclude Include="Source\Common\Debug\_DebugDispOut.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="Common\Debug\_DebugConOut.h">
+    <ClInclude Include="Source\Common\Debug\_DebugConOut.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="Common\Vector2.h">
+    <ClInclude Include="Source\Common\Vector2.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="Common\detail\Vector2.h">
+    <ClInclude Include="Source\Common\detail\Vector2.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="Common\ImageMng.h">
+    <ClInclude Include="Source\Common\LoadManager.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="Common\TimeCount.h">
+    <ClInclude Include="Source\Common\TimeCount.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="Common\Input\Controller.h">
+    <ClInclude Include="Source\Common\Function.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="Common\Input\conTypeID.h">
+    <ClInclude Include="Source\Scene\Base\BasePanel.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="Common\Input\InputID.h">
+    <ClInclude Include="Source\Scene\Base\MenuPanel.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="Common\Input\KeyInput.h">
+    <ClInclude Include="Source\Scene\Title\TitleMenu.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="Common\Input\PadInput.h">
+    <ClInclude Include="Source\Scene\Base\Slot.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="Common\Function.h">
+    <ClInclude Include="Source\Scene\Title\TitleMenuSlot.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Scene\Base\CollisionBox.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Input\MouseCtl.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
   </ItemGroup>
