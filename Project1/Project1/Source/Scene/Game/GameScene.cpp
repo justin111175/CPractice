@@ -1,29 +1,23 @@
-#include "TitleScene.h"
-#include "../../Common/Debug/_DebugDispOut.h"
-#include "../../Common/Debug/_DebugConOut.h"
-#include"../../Common/Function.h"
-#include "../../Common/LoadManager.h"
-#include "../../Common/EventDelegateManager.h"
-TitleScene::TitleScene()
+#include "GameScene.h"
+
+GameScene::GameScene()
 {
-	TRACE("\n%s", "初始化登入頁面");
+
+	printf("進入GameScene");
 	LoadMng.GetID("Test_BG", "Resources/image/G_BG.png", { 900,720 }, { 1,1 });
 	GetDrawScreenSize(&screen_Size.x, &screen_Size.y);
-	menuPanel.Init({ 200, 150 });
 
 	screenID_ = MakeScreen(screen_Size.x, screen_Size.y);
 	mouseCtl = make_shared<MouseCtl>();
 	delegateMng = EventDelegateManager::GetInstance();
 }
 
-TitleScene::~TitleScene()
+GameScene::~GameScene()
 {
 }
 
-unique_Base TitleScene::Update(unique_Base own)
+unique_Base GameScene::Update(unique_Base own)
 {
-
-	menuPanel.UpdateDraw();
 	DrawOwn();
 
 	mouseCtl->Update();
@@ -33,7 +27,7 @@ unique_Base TitleScene::Update(unique_Base own)
 
 		if (mouseCtl->GetClickTrigger() & MOUSE_INPUT_LEFT)
 		{
-			delegateMng.ExecuteButtonDelegate(mouseCtl->Pos());
+			//delegateMng.ExecuteButtonDelegate(mouseCtl->Pos());
 		}
 
 	}
@@ -41,18 +35,14 @@ unique_Base TitleScene::Update(unique_Base own)
 	return std::move(own);
 }
 
-
-
-void TitleScene::Draw()
+void GameScene::Draw()
 {
 	SetDrawScreen(DX_SCREEN_BACK);
 	ClearDrawScreen();  // 清空主画面
 	//menuPanel.Draw();
 
 	DrawGraph(0, 0, screenID_, true);
-	
-	menuPanel.Draw();
-	
+
 	//滑鼠位置渲染
 	Vector2 mouseVec;
 	GetMousePoint(&mouseVec.x, &mouseVec.y);
@@ -60,25 +50,20 @@ void TitleScene::Draw()
 	DrawFormatString(mouseVec.x, mouseVec.y, 0xff0000, _T("Ｘ:%d　,Ｙ:%d"), mouseVec.x, mouseVec.y);
 
 	ScreenFlip();
+
 }
 
-void TitleScene::DrawOwn()
+void GameScene::DrawOwn()
 {
+
 	SetDrawScreen(screenID_);
 	ClearDrawScreen();
 
 	DrawRectExtendGraph(
-		0, 0, screen_Size.x, screen_Size.y,  
-		0, 0, 900, 720,                   
-		LoadMng.GetID("Test_BG")[0],                      
-		TRUE                              
+		0, 0, screen_Size.x, screen_Size.y,
+		0, 0, 900, 720,
+		LoadMng.GetID("Test_BG")[0],
+		TRUE
 	);
 	SetFontSize(50);
-
-	//SetDrawScreen(DX_SCREEN_FRONT);
-
 }
-
-
-
-

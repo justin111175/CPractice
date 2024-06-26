@@ -1,12 +1,15 @@
 #pragma once
 
-
+#include "../../Common/Vector2.h"
 class CollisionBox
 {
 public:
-    Vector2 pos;
-    Vector2 size;
-    bool isPointInside(Vector2 mousePos) {
-        return mousePos.x >= pos.x && mousePos.x <= (pos.x + size.x) && mousePos.y >= pos.y && mousePos.y <= (pos.y + size.y);
-    }
+    CollisionBox();
+    ~CollisionBox();
+    Vector2 pos = {0,0};
+    Vector2 size = {0,0};
+
+    void Init(Vector2 tmpPos, Vector2 tmpSize);
+
+    bool isPointInside(Vector2 mousePos);
 };

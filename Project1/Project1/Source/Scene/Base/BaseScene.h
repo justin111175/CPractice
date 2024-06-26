@@ -7,21 +7,24 @@
 
 #include "../../common/LoadManager.h"
 #include "../../Common/Input/MouseCtl.h"
-class BaseScene;
+#include "../../Common/EventDelegateManager.h"
 
-using unique_Base = std::unique_ptr<BaseScene>;							
+class BaseScene;
+using namespace std;
+using unique_Base = unique_ptr<BaseScene>;							
 
 class BaseScene
 {
 public:
 	BaseScene();
 	virtual ~BaseScene();
-	virtual unique_Base Update(unique_Base own) = 0;					
+	virtual unique_Base Update(unique_Base own) = 0;	
+
 	virtual void Draw();
 	virtual void DrawOwn() = 0;
 protected:
-
-	std::shared_ptr<MouseCtl> mouseCtl;
+	EventDelegateManager delegateMng;
+	shared_ptr<MouseCtl> mouseCtl;
 
 	int screenID_;
 											

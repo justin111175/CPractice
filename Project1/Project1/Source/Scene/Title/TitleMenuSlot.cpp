@@ -1,13 +1,14 @@
 #include "TitleMenuSlot.h"
 #include"../../Common/Debug/_DebugDispOut.h"
 #include "../../Common/Function.h"
+
 void TitleMenuSlot::Init(const SlotData* tmpData)
 {
 
 	slotData = *tmpData;
 
-	collision.size = slotData.panel_Size;
-	collision.pos = slotData.offSetPos +Vector2{0,0};
+	collision.Init(slotData.offSetPos, slotData.panel_Size);
+	BindDeleaget();
 }
 
 void TitleMenuSlot::UpdateDraw(int screen)

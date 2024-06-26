@@ -13,6 +13,7 @@ public:
     int blendCnt;
     const Vector2 screenSize;
     
+    void SceneMovement(unique_Base scene);
 private:
     friend class Singleton<SceneManager>;
 

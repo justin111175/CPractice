@@ -2,6 +2,7 @@
 #include "Title/TitleScene.h"
 #include "../Common/Debug/_DebugConOut.h"
 #include "../Common/Debug/_DebugDispOut.h"
+#include "CrossOver.h"
 void SceneManager::Run()
 {
 	if (!SysInit())
@@ -30,6 +31,12 @@ void SceneManager::Run()
 
 		frames++;
 	}
+
+}
+void SceneManager::SceneMovement(unique_Base scene)
+{
+	//activeScene = std::make_unique<CrossOver>(activeScene, scene);
+
 
 }
 SceneManager::SceneManager():

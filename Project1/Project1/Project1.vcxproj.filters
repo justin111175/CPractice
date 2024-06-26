@@ -60,6 +60,21 @@
     <ClCompile Include="Source\Common\Input\MouseCtl.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Common\EventDelegateManager.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\Base\TranScene.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\CrossOver.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\Game\GameScene.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\Base\CollisionBox.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Scene\SceneManager.h">
@@ -114,6 +129,18 @@
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="Source\Common\Input\MouseCtl.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\EventDelegateManager.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Scene\Base\TranScene.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Scene\CrossOver.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Scene\Game\GameScene.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
   </ItemGroup>

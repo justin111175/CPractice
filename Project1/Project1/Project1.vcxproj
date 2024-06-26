@@ -19,6 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Scene\Base\CollisionBox.cpp" />
+    <ClCompile Include="Source\Scene\Game\GameScene.cpp" />
+    <ClCompile Include="Source\Scene\CrossOver.cpp" />
+    <ClCompile Include="Source\Common\EventDelegateManager.cpp" />
     <ClCompile Include="Source\Common\Input\MouseCtl.cpp" />
     <ClCompile Include="Source\Scene\Base\BasePanel.cpp" />
     <ClCompile Include="Source\Common\Debug\_DebugConOut.cpp" />
@@ -34,8 +38,12 @@
     <ClCompile Include="Source\Scene\Base\MenuPanel.cpp" />
     <ClCompile Include="Source\Scene\Title\TitleMenu.cpp" />
     <ClCompile Include="Source\Scene\Title\TitleMenuSlot.cpp" />
+    <ClCompile Include="Source\Scene\Base\TranScene.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Scene\Game\GameScene.h" />
+    <ClInclude Include="Source\Scene\CrossOver.h" />
+    <ClInclude Include="Source\Common\EventDelegateManager.h" />
     <ClInclude Include="Source\Common\Input\MouseCtl.h" />
     <ClInclude Include="Source\Scene\Base\BasePanel.h" />
     <ClInclude Include="Source\Common\Debug\_DebugConOut.h" />
@@ -54,6 +62,7 @@
     <ClInclude Include="Source\Scene\Base\MenuPanel.h" />
     <ClInclude Include="Source\Scene\Title\TitleMenu.h" />
     <ClInclude Include="Source\Scene\Title\TitleMenuSlot.h" />
+    <ClInclude Include="Source\Scene\Base\TranScene.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
