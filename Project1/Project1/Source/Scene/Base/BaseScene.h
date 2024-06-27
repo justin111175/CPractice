@@ -27,7 +27,7 @@ protected:
 	shared_ptr<MouseCtl> mouseCtl;
 
 	int screenID_;
-											
+	bool isChangeScene = false;
 private:
 
 };

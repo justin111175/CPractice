@@ -4,6 +4,8 @@
 #include"../../Common/Function.h"
 #include "../../Common/LoadManager.h"
 #include "../../Common/EventDelegateManager.h"
+#include "../Game/GameScene.h"
+#include "../CrossOver.h"
 TitleScene::TitleScene()
 {
 	TRACE("\n%s", "初始化登入頁面");
@@ -13,7 +15,8 @@ TitleScene::TitleScene()
 
 	screenID_ = MakeScreen(screen_Size.x, screen_Size.y);
 	mouseCtl = make_shared<MouseCtl>();
-	delegateMng = EventDelegateManager::GetInstance();
+	isChangeScene = false;
+
 }
 
 TitleScene::~TitleScene()
@@ -22,21 +25,23 @@ TitleScene::~TitleScene()
 
 unique_Base TitleScene::Update(unique_Base own)
 {
-
 	menuPanel.UpdateDraw();
 	DrawOwn();
-
 	mouseCtl->Update();
 
 	if (mouseCtl->GetClickTrigger() & MOUSE_INPUT_LEFT)
 	{
-
-		if (mouseCtl->GetClickTrigger() & MOUSE_INPUT_LEFT)
-		{
-			delegateMng.ExecuteButtonDelegate(mouseCtl->Pos());
-		}
-
+		return std::make_unique<CrossOver>(std::move(own),std::make_unique<GameScene>());
+		//for (auto& slot : menuPanel.slotMap)
+		//{
+		//	if (slot.second.collision.isPointInside(mouseCtl->Pos()))
+		//	{
+		//		slot.second.ButtonAction();
+		//		break;
+		//	}
+		//}
 	}
+
 
 	return std::move(own);
 }
@@ -45,13 +50,9 @@ unique_Base TitleScene::Update(unique_Base own)
 
 void TitleScene::Draw()
 {
-	SetDrawScreen(DX_SCREEN_BACK);
-	ClearDrawScreen();  // 清空主画面
-	//menuPanel.Draw();
+
 
 	DrawGraph(0, 0, screenID_, true);
-	
-	menuPanel.Draw();
 	
 	//滑鼠位置渲染
 	Vector2 mouseVec;
@@ -59,7 +60,6 @@ void TitleScene::Draw()
 	SetFontSize(20);
 	DrawFormatString(mouseVec.x, mouseVec.y, 0xff0000, _T("Ｘ:%d　,Ｙ:%d"), mouseVec.x, mouseVec.y);
 
-	ScreenFlip();
 }
 
 void TitleScene::DrawOwn()
@@ -74,7 +74,7 @@ void TitleScene::DrawOwn()
 		TRUE                              
 	);
 	SetFontSize(50);
-
+	menuPanel.Draw();
 	//SetDrawScreen(DX_SCREEN_FRONT);
 
 }

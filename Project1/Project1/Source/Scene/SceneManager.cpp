@@ -3,6 +3,7 @@
 #include "../Common/Debug/_DebugConOut.h"
 #include "../Common/Debug/_DebugDispOut.h"
 #include "CrossOver.h"
+#include "Game/GameScene.h"
 void SceneManager::Run()
 {
 	if (!SysInit())
@@ -16,6 +17,7 @@ void SceneManager::Run()
 	SetMouseDispFlag(TRUE);
 
 	activeScene = std::make_unique<TitleScene>();
+
 	//SetDrawScreen(DX_SCREEN_BACK);
 
 	while (ProcessMessage() == 0 && CheckHitKey(KEY_INPUT_ESCAPE) == 0)
@@ -24,8 +26,11 @@ void SceneManager::Run()
 
 		activeScene = (*activeScene).Update(std::move(activeScene));
 
-
+		SetDrawScreen(DX_SCREEN_BACK);
+		ClearDrawScreen();  
 		activeScene->Draw();
+		ScreenFlip();
+
 		_dbgAddDraw();
 
 
@@ -33,12 +38,7 @@ void SceneManager::Run()
 	}
 
 }
-void SceneManager::SceneMovement(unique_Base scene)
-{
-	//activeScene = std::make_unique<CrossOver>(activeScene, scene);
 
-
-}
 SceneManager::SceneManager():
 	screenSize{1280,720}
 {

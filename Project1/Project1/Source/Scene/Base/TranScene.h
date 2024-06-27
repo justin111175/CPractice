@@ -17,5 +17,6 @@ protected:
 	unique_Base oldScene_;			
 	unique_Base nextScene_;			
 
+	Vector2 screenSize;
 };
 

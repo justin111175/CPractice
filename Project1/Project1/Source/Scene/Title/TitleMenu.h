@@ -23,6 +23,8 @@ public:
 	void UpdateDraw() override;
 
 	std::map<MenuType, TitleMenuSlot> slotMap;
+private:
+	SlotData InitSlotData(MenuType type);
 
 };
 

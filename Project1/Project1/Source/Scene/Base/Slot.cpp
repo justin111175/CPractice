@@ -12,15 +12,14 @@ void Slot::Init(const SlotData* tmpData)
 
 }
 
-void Slot::UpdateDraw(int screen)
+void Slot::Draw()
+{
+}
+
+void Slot::UpdateDraw()
 {
 	//SetDrawScreen(screen);
 	//DrawBox(0, 0, panel_Size.x, panel_Size.y, 0xffff00, true);
 }
 
-void Slot::BindDeleaget()
-{
-	EventDelegateManager::GetInstance().OnButtonDelegates.push_back(ButtonAction);
-
-}
 

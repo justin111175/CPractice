@@ -7,7 +7,7 @@
 #include "../Base/CollisionBox.h"
 #include "../../Common/EventDelegateManager.h"
 
-typedef std::function<void(Vector2 pos)> Action;
+typedef std::function<void()> Action;
 
 struct SlotData
 {
@@ -15,6 +15,7 @@ struct SlotData
 	Vector2 panel_Size;
 	Vector2 screenSize;
 	Vector2 offSetPos;
+	Vector2 localPos;
 	std::string Naem = "";
 };
 
@@ -24,13 +25,16 @@ public:
 	Slot();
 	~Slot();
 	virtual void Init(const SlotData* tmpData)=0;
-
-	virtual void UpdateDraw(int screen)=0;
+	virtual void Draw();
+	virtual void UpdateDraw()=0;
 
 	Action ButtonAction;
-	void BindDeleaget();
+
+	CollisionBox collision;
+
 protected:
 	SlotData slotData;
+	int screenID_;
 
 };
 

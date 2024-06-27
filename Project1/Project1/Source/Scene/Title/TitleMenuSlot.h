@@ -8,10 +8,10 @@ public:
 	~TitleMenuSlot() {}
 
 	void Init(const SlotData* tmpData)override;
-	void UpdateDraw(int screen)override;
+	void UpdateDraw()override;
+	void Draw()override;
 
 	//CollisionBox collision;
-	CollisionBox collision;
 
 };
 
