@@ -13,10 +13,13 @@ public:
     int blendCnt;
     const Vector2 screenSize;
     
+    void SetTranUpdate(bool flag);
 
 private:
-    friend class Singleton<SceneManager>;
+    bool isTranUpdate = false;
 
+    friend class Singleton<SceneManager>;
+    
     SceneManager();
     ~SceneManager();
 

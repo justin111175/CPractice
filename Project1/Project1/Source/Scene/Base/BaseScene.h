@@ -22,12 +22,13 @@ public:
 
 	virtual void Draw();
 	virtual void DrawOwn() = 0;
+	bool isTranUpdate = false;
+
 protected:
 	EventDelegateManager delegateMng;
 	shared_ptr<MouseCtl> mouseCtl;
 
 	int screenID_;
-	bool isChangeScene = false;
 private:
 
 };

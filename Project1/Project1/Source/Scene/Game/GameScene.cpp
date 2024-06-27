@@ -1,14 +1,19 @@
 #include "GameScene.h"
+#include"../SceneManager.h"
+#include "../CrossOver.h"
 
 GameScene::GameScene()
 {
 
-	printf("進入GameScene");
+	printf("\n進入GameScene");
+	isTranUpdate = false;
 	LoadMng.GetID("Test_BG", "Resources/image/G_BG.png", { 900,720 }, { 1,1 });
 	GetDrawScreenSize(&screen_Size.x, &screen_Size.y);
 
 	screenID_ = MakeScreen(screen_Size.x, screen_Size.y);
 	mouseCtl = make_shared<MouseCtl>();
+	SceneManager::GetInstance().SetTranUpdate(false);
+
 }
 
 GameScene::~GameScene()
@@ -17,14 +22,21 @@ GameScene::~GameScene()
 
 unique_Base GameScene::Update(unique_Base own)
 {
+
 	DrawOwn();
 
 	mouseCtl->Update();
 
 
 
+	if (isTranUpdate)
+	{
+		return std::make_unique<CrossOver>(std::move(own), std::make_unique<GameScene>());
+	}
 	return std::move(own);
 }
+
+
 
 void GameScene::Draw()
 {

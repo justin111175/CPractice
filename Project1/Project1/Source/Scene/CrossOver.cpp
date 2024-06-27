@@ -1,19 +1,16 @@
 #include "CrossOver.h"
-
 CrossOver::CrossOver(unique_Base oldScene, unique_Base nextScene)
 {
 	oldScene_ = std::move(oldScene);
 	nextScene_ = std::move(nextScene);
 	GetDrawScreenSize(&screenSize.x, &screenSize.y);
 	screenID_ = MakeScreen(screenSize.x, screenSize.y);
-
 	count_ = 0;
+
 }
 
 CrossOver::~CrossOver()
 {
-
-
 }
 
 bool CrossOver::TransUpdate()

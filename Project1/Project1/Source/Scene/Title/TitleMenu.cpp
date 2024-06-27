@@ -1,7 +1,7 @@
 #include "TitleMenu.h"
 #include "../SceneManager.h"
 #include "../Game/GameScene.h"
-
+#include"TitleScene.h"
 void TitleMenu::Init(Vector2 panelSize)
 {
 	panel_Size = panelSize;
@@ -24,7 +24,7 @@ void TitleMenu::Init(Vector2 panelSize)
 
 
 	tmpSlot.ButtonAction = [&]() {
-		//SceneManager::GetInstance().SceneMovement(std::make_unique<GameScene>());
+		SceneManager::GetInstance().SetTranUpdate(true);
 		};
 	tmpData = InitSlotData(MenuType::StartGame);
 	tmpSlot.Init(&tmpData);

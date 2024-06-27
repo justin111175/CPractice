@@ -15,17 +15,22 @@ void SceneManager::Run()
 	SetUseZBufferFlag(TRUE);
 	SetWriteZBufferFlag(TRUE);
 	SetMouseDispFlag(TRUE);
-
 	activeScene = std::make_unique<TitleScene>();
 
 	//SetDrawScreen(DX_SCREEN_BACK);
 
 	while (ProcessMessage() == 0 && CheckHitKey(KEY_INPUT_ESCAPE) == 0)
 	{
+		if ((*activeScene).isTranUpdate!= isTranUpdate)
+		{
+			(*activeScene).isTranUpdate = isTranUpdate;
+		}
+
 		_dbgStartDraw();
 
 		activeScene = (*activeScene).Update(std::move(activeScene));
-
+		
+		
 		SetDrawScreen(DX_SCREEN_BACK);
 		ClearDrawScreen();  
 		activeScene->Draw();
@@ -37,6 +42,12 @@ void SceneManager::Run()
 		frames++;
 	}
 
+}
+
+
+void SceneManager::SetTranUpdate(bool flag)
+{
+	isTranUpdate = flag;
 }
 
 SceneManager::SceneManager():

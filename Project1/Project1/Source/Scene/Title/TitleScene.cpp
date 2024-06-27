@@ -6,6 +6,7 @@
 #include "../../Common/EventDelegateManager.h"
 #include "../Game/GameScene.h"
 #include "../CrossOver.h"
+#include "../SceneManager.h"
 TitleScene::TitleScene()
 {
 	TRACE("\n%s", "初始化登入頁面");
@@ -15,7 +16,8 @@ TitleScene::TitleScene()
 
 	screenID_ = MakeScreen(screen_Size.x, screen_Size.y);
 	mouseCtl = make_shared<MouseCtl>();
-	isChangeScene = false;
+	
+	SceneManager::GetInstance().SetTranUpdate(false);
 
 }
 
@@ -25,26 +27,33 @@ TitleScene::~TitleScene()
 
 unique_Base TitleScene::Update(unique_Base own)
 {
+
+
 	menuPanel.UpdateDraw();
 	DrawOwn();
 	mouseCtl->Update();
 
 	if (mouseCtl->GetClickTrigger() & MOUSE_INPUT_LEFT)
 	{
-		return std::make_unique<CrossOver>(std::move(own),std::make_unique<GameScene>());
-		//for (auto& slot : menuPanel.slotMap)
-		//{
-		//	if (slot.second.collision.isPointInside(mouseCtl->Pos()))
-		//	{
-		//		slot.second.ButtonAction();
-		//		break;
-		//	}
-		//}
+		//return std::make_unique<CrossOver>(std::move(own),std::make_unique<GameScene>());
+		for (auto& slot : menuPanel.slotMap)
+		{
+			if (slot.second.collision.isPointInside(mouseCtl->Pos()))
+			{
+				slot.second.ButtonAction();
+				break;
+			}
+		}
 	}
 
-
+	if (isTranUpdate)
+	{
+		return std::make_unique<CrossOver>(std::move(own), std::make_unique<GameScene>());
+	}
 	return std::move(own);
 }
+
+
 
 
 
